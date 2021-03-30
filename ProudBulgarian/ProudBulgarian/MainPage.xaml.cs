@@ -15,39 +15,19 @@ namespace ProudBulgarian
             InitializeComponent();
         }
 
-        private void Profile_Clicked(object sender, EventArgs e)
+        private void LoginButton_Clicked(object sender, EventArgs e)
         {
+            var isEmailEmpty = string.IsNullOrEmpty(emailEntry.Text);
+            var isPasswordEmpty = string.IsNullOrEmpty(passwordEntry.Text);
 
-        }
+            if (isEmailEmpty || isPasswordEmpty)
+            {
 
-        private void Singleplayer_Clicked(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Multiplayer_Clicked(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Challenge_Clicked(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Friends_Clicked(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Rankings_Clicked(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Exit_Clicked(object sender, EventArgs e)
-        {
-
+            }
+            else
+            {
+                Navigation.PushAsync(new HomePage());
+            }
         }
     }
 }
