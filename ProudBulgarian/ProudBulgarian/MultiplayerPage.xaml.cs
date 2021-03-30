@@ -10,16 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace ProudBulgarian
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Login : ContentPage
+    public partial class MultiplayerPage : ContentPage
     {
-        public Login()
+        public MultiplayerPage()
         {
             InitializeComponent();
-        }
-
-        private void LoginButton_Clicked(object sender, EventArgs e)
-        {
-
         }
     }
 }
