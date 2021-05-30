@@ -29,33 +29,40 @@ namespace ProudBulgarian
             
             if(passwordEntry.Text == confimPasswordEntry.Text)
             {
-                //TODO check if username and email is used already
-                int rows = 0;
-                User user = new User()
-                {
-                    Name = usernameEntry.Text,
-                    Email = emailEntry.Text,
-                    Password = passwordEntry.Text,
-                    Duels_Won = 0,
-                    Duels_Played = 0,
-                    Single_Player_Progress = 0,
-                    Level = 1,
-                    Experience = 0
-                };
-                
                 using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
                 {
-                    conn.CreateTable<User>();
-                    rows = conn.Insert(user);
-                    if (rows > 0)
+
+                    if (conn.Table<User>().ToList().Where(u => u.Email == emailEntry.Text || u.Name == usernameEntry.Text).FirstOrDefault() != null)
                     {
-                        App.Username = user.Name;
-                        DisplayAlert("Success", "Successful registration", "Ok");
-                        Navigation.PushAsync(new HomePage());
-                    }
-                    else
+                        DisplayAlert("Error", "Email or Username is already used", "Ok");
+                    } else
                     {
-                        DisplayAlert("Error", "Unsuccessful registration", "Ok");
+                        int rows = 0;
+                        User user = new User()
+                        {
+                            Name = usernameEntry.Text,
+                            Email = emailEntry.Text,
+                            Password = passwordEntry.Text,
+                            Duels_Won = 0,
+                            Duels_Played = 0,
+                            Single_Player_Progress = 0,
+                            Level = 1,
+                            Experience = 0
+                        };
+
+
+                        conn.CreateTable<User>();
+                        rows = conn.Insert(user);
+                        if (rows > 0)
+                        {
+                            App.Username = user.Name;
+                            DisplayAlert("Success", "Successful registration", "Ok");
+                            Navigation.PushAsync(new HomePage());
+                        }
+                        else
+                        {
+                            DisplayAlert("Error", "Unsuccessful registration", "Ok");
+                        }
                     }
                 }
             }
