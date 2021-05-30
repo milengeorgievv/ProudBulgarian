@@ -44,7 +44,8 @@ namespace ProudBulgarian
 
         private void Exit_Clicked(object sender, EventArgs e)
         {
-            //quit the app
+            App.Username = string.Empty;
+            Navigation.PopToRootAsync();
         }
     }
 }
