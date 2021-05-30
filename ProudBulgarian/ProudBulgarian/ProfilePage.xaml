@@ -7,6 +7,22 @@
             <Label Text="Profile!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            <ListView x:Name="userProfileView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding Name}" />
+                                <Label Text="{Binding Duels_Won}" />
+                                <Label Text="{Binding Duels_Played}" />
+                                <Label Text="{Binding Single_Player_Progress}" />
+                                <Label Text="{Binding Level}" />
+                                <Label Text="{Binding Experience}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProudBulgarian.QuestionPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="questionLabel" Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Button x:Name="firstAnswer"  Clicked="firstAnswer_Clicked"/>
+            <Button x:Name="secondAnswer" Text="" Clicked="secondAnswer_Clicked"/>
+            <Button x:Name="thirdAnswer" Text="" Clicked="thirdAnswer_Clicked"/>
+            <Button x:Name="fourthAnswer" Text="" Clicked="fourthAnswer_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

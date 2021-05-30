@@ -5,14 +5,13 @@
     <ContentPage.Content>
         <StackLayout VerticalOptions="Center"
                      Margin="20">
-            <Label Text="Welcome to Xamarin.Forms!"
+            <Label Text="Welcome to Proud Bulgarian!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
             <Button Text="Profile" Clicked="Profile_Clicked"></Button>
             <Button Text="Singleplayer" Clicked="Singleplayer_Clicked"></Button>
-            <Button Text="Multiplayer" Clicked="Multiplayer_Clicked"></Button>
+            <Button Text="Challenges" Clicked="Challenges_Clicked"></Button>
             <Button Text="Daily Challenge" Clicked="Challenge_Clicked"></Button>
-            <Button Text="Friends" Clicked="Friends_Clicked"></Button>
             <Button Text="Ranking" Clicked="Ranking_Clicked"></Button>
             <Button Text="Exit" Clicked="Exit_Clicked"></Button>
         </StackLayout>

@@ -7,6 +7,22 @@
             <Label Text="Ranking!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            <ListView x:Name="userListView" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Name}" />
+                                <Label Text="{Binding Duels_Won}" />
+                                <Label Text="{Binding Duels_Played}" />
+                                <Label Text="{Binding Level}" />
+                                <Label Text="{Binding Experience}" />
+                                <Button Text="Challenge" Clicked="Challenge_Clicked"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

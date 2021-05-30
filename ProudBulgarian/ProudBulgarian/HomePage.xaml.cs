@@ -27,7 +27,7 @@ namespace ProudBulgarian
             Navigation.PushAsync(new SingleplayerPage());
         }
 
-        private void Multiplayer_Clicked(object sender, EventArgs e)
+        private void Challenges_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new MultiplayerPage());
         }
@@ -35,11 +35,6 @@ namespace ProudBulgarian
         private void Challenge_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new DailyChallengePage());
-        }
-
-        private void Friends_Clicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new FriendsPage());
         }
 
         private void Ranking_Clicked(object sender, EventArgs e)

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProudBulgarian.RegisterPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="emailEntry"
+                   Placeholder="Email address"
+                   TextColor="{StaticResource blueColor}"
+                   Keyboard="Email"/>
+            <Entry x:Name="usernameEntry"
+                   Placeholder="Username"
+                   TextColor="{StaticResource blueColor}"/>
+            <Entry x:Name="passwordEntry"
+                   Placeholder="Password"
+                   TextColor="{StaticResource blueColor}"
+                   IsPassword="True"/>
+            <Entry x:Name="confimPasswordEntry"
+                   Placeholder="Confirm password"
+                   TextColor="{StaticResource blueColor}"
+                   IsPassword="True"/>
+            <Button x:Name="resisterButton"
+                    Margin="0,50,0,0"
+                    Text="Register"
+                    Clicked="registerButton_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
