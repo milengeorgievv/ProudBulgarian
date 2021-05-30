@@ -27,7 +27,7 @@ namespace ProudBulgarian
             using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
             {
                 conn.CreateTable<User>();
-                var users = conn.Table<User>().ToList();//TODO without curr player
+                var users = conn.Table<User>().ToList().Where(u => u.Name != App.Username);
                 userListView.ItemsSource = users;
             }
 
@@ -40,8 +40,7 @@ namespace ProudBulgarian
             StackLayout listViewItem = (StackLayout)button.Parent;
             Label label = (Label)listViewItem.Children[0];
 
-            String name = label.Text;//name
-            //get random questions
+            String name = label.Text;
             var questions = RandomQuestions(5);
             Challenge challenge = new Challenge()
             {
